@@ -17,7 +17,7 @@ var masterTicketList = [
     location: '9F',
     issue: 'Donkey picture not displaying on hover.'
   }
-]
+];
 
 function TicketList() {
   return(
