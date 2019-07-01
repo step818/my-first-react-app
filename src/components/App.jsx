@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Error404 from './Error404';
 
 import Header from './Header';
 import TicketList from './TicketList';
@@ -17,7 +18,8 @@ function App(){
       <Header/>
       <Switch>
         <Route exact path='/' component={TicketList} />
-        <Route path='/newticket' component={NewTicketForm} /> 
+        <Route path='/newticket' component={NewTicketForm} />
+        <Route component={Error404} /> 
       </Switch>
     </div>
   );
