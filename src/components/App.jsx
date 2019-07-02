@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Error404 from './Error404';
 
+import Error404 from './Error404';
 import Header from './Header';
 import TicketList from './TicketList';
 import NewTicketForm from './NewTicketForm';
