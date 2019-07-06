@@ -1,25 +1,35 @@
 /* eslint-disable no-console */
 /* eslint-disable constructor-super */
 import React from 'react';
+import ConfirmationQuestions from './ConfirmationQuestions';
+import NewTicketForm from './NewTicketForm';
 
 class NewTicketControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      forVisibleOnPage: false
+      formVisibleOnPage: false
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
+
+
   handleClick(){
-    console.log('Hey, you clicked me! I think I liked it ;)');
+    this.setState({formVisibleOnPage: true});
   }
 
   render() {
+    let currentlyVisibleContent = null;
+    if (this.state.formVisibleOnPage){
+      currentlyVisibleContent = <NewTicketForm/>;
+    } else {
+      currentlyVisibleContent = <ConfirmationQuestions onHandleClick={this.handleClick}/>;
+    }
     return (
       <div>
-        <p>This is the NewTicketControl component</p>
-        <strong onClick={this.handleClick}>Click me to change my state!</strong>
+        {currentlyVisibleContent}
       </div>
     );
   }
