@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
-/* eslint-disable constructor-super */
 import React from 'react';
 import ConfirmationQuestions from './ConfirmationQuestions';
 import NewTicketForm from './NewTicketForm';
+import PropTypes from 'prop-types';
 
 class NewTicketControl extends React.Component {
 
@@ -14,8 +14,6 @@ class NewTicketControl extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-
-
   handleClick(){
     this.setState({formVisibleOnPage: true});
   }
@@ -23,7 +21,7 @@ class NewTicketControl extends React.Component {
   render() {
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewTicketForm/>;
+      currentlyVisibleContent = <NewTicketForm onNewTicketCreation={this.props.onNewTicketCreation}/>;
     } else {
       currentlyVisibleContent = <ConfirmationQuestions onHandleClick={this.handleClick}/>;
     }
@@ -34,5 +32,9 @@ class NewTicketControl extends React.Component {
     );
   }
 }
+
+NewTicketControl.propTypes = {
+  onNewTicketCreation: PropTypes.func
+};
 
 export default NewTicketControl;
