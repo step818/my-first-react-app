@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Ticket(props) {
-  return (
+  const ticketinformation = 
     <div>
       <style jsx>{`
         .color-toggle {
@@ -18,15 +18,28 @@ function Ticket(props) {
         <p><em>{props.issue}</em></p>
       </div>
       <hr/>
-    </div>
-  );
+    </div>;
+
+    if (props.currentRouterPath === '/admin'){
+      return (
+        <div onClick={() => {alert('hey, just clicked the ticket belonging to ' +       props.names);}}>{ticketInformation}
+        </div>
+        );
+    } else {
+      return (
+        <div>
+          {ticketInformation}
+        </div>
+      );
+    }  
 }
 
 Ticket.propTypes = {
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
-  formattedWaitTime: PropTypes.string.isRequired
+  formattedWaitTime: PropTypes.string.isRequired,
+  currentRouterPath: PropTypes.string
 };
 
 export default Ticket;
