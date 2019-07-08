@@ -9,7 +9,7 @@ class NewTicketControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
     };
     this.handleClick = this.handleClick.bind(this);
   }
