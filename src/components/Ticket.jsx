@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import c from './../constants';
 
 function Ticket(props) {
 
   function handleSavingSelectedTicket(ticketId){
     const { dispatch } = props;
     const action = {
-      type: 'SELECT_TICKET',
+      type: c.SELECT_TICKET,
       ticketId: ticketId
     };
     dispatch(action);
