@@ -19,7 +19,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.0.0",
     "redux": "^3.7.2",
-    "styled-jsx": "^3.2.1",
+    "styled-jsx": "^5.1.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "eslint-loader": "^2.1.2",
     "eslint-plugin-react": "^7.14.2",
     "file-loader": "^1.1.6",
-    "html-webpack-plugin": "^2.29.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^20.0.4",
     "react-hot-loader": "^3.0.0-beta.7",
     "url-loader": "^0.6.2",
